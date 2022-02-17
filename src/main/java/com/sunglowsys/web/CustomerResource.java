@@ -26,7 +26,7 @@ public class CustomerResource {
 
    @GetMapping
     public ModelAndView home(){
-        log.debug("Web request to findAll Customers");
+        log.debug("Web request to go to home page Customers");
         Page<Customer> page = customerService.findAll(PageRequest.of(0, 20));
        return new ModelAndView("index", "customers", page.getContent());
     }
@@ -47,7 +47,7 @@ public class CustomerResource {
     @GetMapping("/customers/{id}")
     public ModelAndView updateCustomer(@PathVariable Long id){
         log.debug("Web request to update Customer : {}",id);
-        return new ModelAndView("add-customer", "customer", customerService.findById(id));
+        return new ModelAndView("add-customer", "customer", customerService.findById(id).get());
     }
 
     @GetMapping("/customers/delete/{id}")

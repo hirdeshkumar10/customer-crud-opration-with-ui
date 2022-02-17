@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body style="background-color:powderblue;">
     <button><a href="/customers">Add Customer</a></button>
-    <table border="2px">
+    <table border="10px">
         <thead>
             <tr>
                 <th>Id</th>
@@ -15,20 +15,21 @@
                 <th>Email</th>
                 <th>Mobile</th>
                 <th>Gender</th>
-
                 <th>Action</th>
+                <th>Action</th>
+
             </tr>
 
         </thead>
         <tbody>
             <tr th:each="customer:${customers}">
 
-                <td th:text="${customer.getId}"></td>
-                <td th:text="${customer.getFirstName}"></td>
-                <td th:text="${customer.getLastName}"></td>
-                <td th:text="${customer.getEmail}"></td>
-                <td th:text="${customer.getMobile}"></td>
-                <td th:text="${customer.getGender}"></td>
+                <td th:text="${customer.id}"></td>
+                <td th:text="${customer.firstName}"></td>
+                <td th:text="${customer.lastName}"></td>
+                <td th:text="${customer.email}"></td>
+                <td th:text="${customer.mobile}"></td>
+                <td th:text="${customer.gender}"></td>
 
                <td>
                    <button>

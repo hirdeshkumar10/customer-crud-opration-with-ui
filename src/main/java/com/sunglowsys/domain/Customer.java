@@ -1,6 +1,9 @@
 package com.sunglowsys.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity
@@ -11,19 +14,24 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @NotEmpty
+    @NotNull
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(nullable = true)
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(nullable = false)
+    @Email
+    @Column(name = "email")
     private String email;
 
-    @Column(nullable = false)
+    @NotNull
+    @Column(name = "mobile")
     private String mobile;
 
-    @Column(nullable = false)
+    @NotNull
+    @Column(name = "gender")
     private String gender;
 
     public Customer() {
