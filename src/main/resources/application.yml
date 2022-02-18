@@ -9,7 +9,6 @@ server:
 
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/sunglowsys_db
     username: postgres
     password: Password@123
